@@ -1,0 +1,19 @@
+
+
+<table border="1">
+    <tbody>
+    {% for comunicado in comunicados %}
+        <tr>
+            <td>{{comunicado.titulo}}</td>
+            <td>{{comunicado.fechaact}}</td>
+            <td>{{comunicado.grupo}}</td>
+            <td>
+                <a href="{{comunicado.archivo.url}}" target="_blank">
+                <img src="{% static 'appcolmcv/img/institucional.png' %}" width="30" height="30"> </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+

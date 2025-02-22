@@ -1,0 +1,47 @@
+{% extends "appcolmcv/base.html" %}
+{% load static %}
+{% block content %}
+
+<div id="paginadetalle">
+
+
+
+
+<div class="container">
+<div class="row">
+
+<!--
+    <div class="col-md-12">
+    <div class="card" style="width:100%; margin: 20px 10px; border:2">
+        <div id="contenidotitinsti">
+            <h6 class="card-title">  <center> COMUNICADOS Y CIRCULARES </center>  </h6>
+        </div>
+        <div id="contenidoinsti">
+            <a href="{% url 'Comunicados'%}" >
+            <img src="{% static 'appcolmcv/img/institucional.png' %}" alt="" style="width:100px; heigth:200px;">  </a>
+        </div>
+    </div>
+    </div>
+-->
+
+
+    {% for presentacion in presentaciones %}
+    <div class="col-md-3">
+    <div class="cardinst" style="width:100%; margin: 20px 10px; border:1">
+    <div id="institucional">
+        <div id="contenidotitinsti">
+            <h6 class="card-titleact">  <center>   {{presentacion.titulo}} </center>  </h6>
+        </div>
+        <div id="contenidoinsti">
+            <a href="{{presentacion.archivo.url}}" target="_blank" >
+            <img src="{{presentacion.imagen.url}}" width="50px" height="150px"  class="card-img-top"> </a>
+        </div>
+    </div>
+    </div>
+    </div>
+    {% endfor %}
+
+</div>
+</div>
+</div>
+{% endblock %}
